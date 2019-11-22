@@ -1,6 +1,8 @@
 name: 'send email action'
 description: 'send email from actions'
-icon: mail
+branding:
+  icon: mail
+  color: red
 inputs:
   smtp-server:  # id of input
     description: 'smtp server'
