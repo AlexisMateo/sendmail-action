@@ -432,7 +432,7 @@ try {
     let transporter = nodemailer.createTransport({
         host: smtpServer,
         port: smtpServerPort,
-        secure: false, 
+        secure: isTLS, 
         auth: {
             user: authUser,
             pass: authPassword
