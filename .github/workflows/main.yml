@@ -24,3 +24,4 @@ jobs:
           from: caribemediainforma@caribemedia.com.do
           to: a.mateo@caribemedia.com.do
           is-tls: false
+          commit-message: true
