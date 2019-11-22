@@ -427,6 +427,7 @@ try {
     let from = core.getInput('from');
     let reciver = core.getInput('to');
     let isTLS = core.getInput('tls');
+    let isCommitMessage = core.getInput('commit-message');
 
 
     let transporter = nodemailer.createTransport({
@@ -438,6 +439,10 @@ try {
             pass: authPassword
         }
     });
+
+    if(isCommitMessage){
+        body = github.context.payload;
+    }
 
     var message = {
         from,

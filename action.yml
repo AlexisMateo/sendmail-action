@@ -31,6 +31,9 @@ inputs:
   is-tls:
     description: 'use secure connection?'
     required: false
+  commit-message:
+    description: 'send commit message as body'
+    required: false
 outputs:
   time: # id of output
     description: 'Al Fin Se Me Dio, Como Nadie Lo Esperaba, Me Acerque Y Se Me Dio Y Como Ella Lo Queria'
