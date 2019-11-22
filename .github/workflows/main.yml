@@ -15,10 +15,10 @@ jobs:
       - name: Send mail
         uses: ./
         with:
-          smtp-server: smtp.office365.com
+          smtp-server: ${{ secrets.SMTP_SERVER }}
           smtp-server-port: 25
-          auth-user: a.mateo@caribemedia.com.do
-          auth-password: ${{secrets.EMAIL_PASSWORD}}
+          auth-user: ${{ secrets.AUTH_USER }}
+          auth-password: ${{secrets.EMAIL_PASSWORD }}
           subject: elaborado
           body: que buena idea
           from: a.mateo@caribemedia.com.do
