@@ -4,9 +4,9 @@ An action  sends a email.
 
 ## Usage
 
-```yaml
+``` yaml
 - name: Send email
-    uses: AlexisMateo/sendmail-action@1
+    uses: AlexisMateo/sendmdail-action@1
     with:
       smtp-server: ${{ secrets.SMTP_SERVER }}
       smtp-server-port: ${{ secrets.SMTP_SERVER_PORT }}
