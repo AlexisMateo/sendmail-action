@@ -1,0 +1,22 @@
+name: 'send mail'
+description: 'send email from actions'
+inputs:
+  from:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'a.mateo@caribemedia.com.do'
+  to:
+    description: 'Who to send'
+    required: true
+    default: 'r.contreras@caribemedia.com.do'
+  message:
+    description: 'The message to be sended'
+    required: true
+    default: 'a.mateo@caribemedia.com.do'
+outputs:
+  time: # id of output
+    description: 'Al Fin Se Me Dio, Como Nadie Lo Esperaba, Me Acerque Y Se Me Dio Y Como Ella Lo Queria'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
