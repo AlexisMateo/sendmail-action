@@ -1,21 +1,21 @@
-# Hello world javascript action
+# Send email Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+An action  sends a email.
 
-## Inputs
+## Usage
 
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
-
-## Example usage
-
-uses: actions/hello-world-javascript-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yaml
+- name: Send email
+    uses: AlexisMateo/sendmail-action@1
+    with:
+      smtp-server: ${{ secrets.SMTP_SERVER }}
+      smtp-server-port: ${{ secrets.SMTP_SERVER_PORT }}
+      auth-user: ${{ secrets.AUTH_USER }}
+      auth-password: ${{secrets.EMAIL_PASSWORD }}
+      subject: correciones a ${{github.repository}}
+      body: ${{github.context.payload}}
+      from: ${{ secrets.EMAIL_FROM }}
+      to: ${{ secrets.EMAIL_RECIVER }}
+      is-tls: false
+      commit-message: true
+```
