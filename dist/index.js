@@ -415,28 +415,28 @@ module.exports = pump
 const core = __webpack_require__(310);
 const github = __webpack_require__(462);
 const nodemailer = __webpack_require__(201);
+const smtps = __webpack_require__(929);
 
 try {
-    const smtpServer = core.getInput('smtp-server');
-    const smtpServerPort = core.getInput('smtp-server-port');
-    const authUser = core.getInput('auth-user');
-    const authPassword = core.getInput('auth-password');
-    const subject = core.getInput('subject');
-    const body = core.getInput('body');
-    const from = core.getInput('from');
-    const reciver = core.getInput('to');
-    const isTLS = core.getInput('tls');
 
-    core.setOutput("smtpServer", smtpServer);
-    core.setOutput("smtpServerPort", smtpServerPort);
-    core.setOutput("authUser", authUser);
-    core.setOutput("authPassword", authPassword);
-    core.setOutput("subject", subject);
-    core.setOutput("body", body);
-    core.setOutput("from", from);
-    core.setOutput("reciver", reciver);
-    core.setOutput("isTLS", isTLS);
     
+    let smtpServer = core.getInput('smtp-server');
+    let smtpServerPort = core.getInput('smtp-server-port');
+    let authUser = core.getInput('auth-user');
+    let authPassword = core.getInput('auth-password');
+    let subject = core.getInput('subject');
+    let body = core.getInput('body');
+    let from = core.getInput('from');
+    let reciver = core.getInput('to');
+    let isTLS = core.getInput('tls');
+
+    if(!smtpServer){
+        let smtp = authUser.match(/(?<=@)(.*)(?=\.)/g)[0];
+        smtpServer = smtp.serverAddress;
+        smtpServerPort= smtp.SSLPort
+    }
+    
+
 
     let transporter = nodemailer.createTransport({
         host: smtpServer,
@@ -23455,6 +23455,13 @@ module.exports = class HttpError extends Error {
   }
 }
 
+
+/***/ }),
+
+/***/ 929:
+/***/ (function(module) {
+
+module.exports = {"gmail":{"serverAddress":"smtp.gmail.com","TLSPort":587,"SSLPort":465},"outlook":{"serverAddress":"smtp-mail.outlook.com","TLSPort":587,"SSLPort":25},"hotmail":{"serverAddress":"smtp.live.com","TLSPort":587,"SSLPort":25},"office":{"serverAddress":"smtp.office365.com","TLSPort":587,"SSLPort":25}};
 
 /***/ }),
 

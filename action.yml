@@ -3,11 +3,11 @@ description: 'send email from actions'
 inputs:
   smtp-server:  # id of input
     description: 'smtp server'
-    required: true
+    required: false
     default: 'smtp.office365.com'
   smtp-server-port:  # id of input
     description: 'smtp server port'
-    required: true
+    required: false
     default: 25
   auth-user:  # id of input
     description: 'auth user'
