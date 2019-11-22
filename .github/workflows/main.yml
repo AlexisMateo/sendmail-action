@@ -20,7 +20,7 @@ jobs:
           auth-user: ${{ secrets.AUTH_USER }}
           auth-password: ${{secrets.EMAIL_PASSWORD }}
           subject: elaborado
-          body: que buena idea
+          body: ${{github.actor}}
           from: caribemediainforma@caribemedia.com.do
           to: a.mateo@caribemedia.com.do
           is-tls: false
