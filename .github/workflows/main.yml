@@ -19,8 +19,8 @@ jobs:
           smtp-server-port: 25
           auth-user: ${{ secrets.AUTH_USER }}
           auth-password: ${{secrets.EMAIL_PASSWORD }}
-          subject: elaborado
-          body: que buena idea
+          subject: correciones a ${{github.repository}}
+          body: ${{github.context.payload}}
           from: caribemediainforma@caribemedia.com.do
           to: a.mateo@caribemedia.com.do
-          is-tls: true
+          is-tls: false
