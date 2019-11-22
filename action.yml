@@ -1,4 +1,4 @@
-name: 'send mail'
+name: 'send email'
 description: 'send email from actions'
 inputs:
   smtp-server:  # id of input
