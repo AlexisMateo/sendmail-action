@@ -1,10 +1,11 @@
+
 # Send email Action
 
 An action  sends a email.
 
 ## Usage
 
-``` yaml
+```yml
 - name: Send email
     uses: AlexisMateo/sendmdail-action@1
     with:
