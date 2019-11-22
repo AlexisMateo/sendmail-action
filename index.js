@@ -30,7 +30,7 @@ try {
     if(isCommitMessage){
         let payload = github.context.payload;
         body = payload.commits.reduce(function(a,b){return "* "+ a.message + "\n" + "* "+ b.message});
-        core.setOutput("body", body);
+        console.log(body);
     }
     var message = {
         from,
