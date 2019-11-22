@@ -1,9 +1,11 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const nodemailer = require("nodemailer");
+const JSON = require('./juankca.json')
 
 try {
 
+    
     let smtpServer = core.getInput('smtp-server');
     let smtpServerPort = core.getInput('smtp-server-port');
     let authUser = core.getInput('auth-user');
