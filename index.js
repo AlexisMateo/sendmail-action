@@ -3,37 +3,40 @@ const github = require('@actions/github');
 const nodemailer = require("nodemailer");
 
 try {
-    const smtpServer = core.getInput('smtp-server');
-    const smtpServerPort = core.getInput('smtp-server-port');
-    const authUser = core.getInput('auth-user');
-    const authPassword = core.getInput('auth-password');
-    const subject = core.getInput('subject');
-    const body = core.getInput('body');
-    const from = core.getInput('from');
-    const reciver = core.getInput('to');
-    const isTLS = core.getInput('tls');
 
-    core.setOutput("smtpServer", smtpServer);
-    core.setOutput("smtpServerPort", smtpServerPort);
-    core.setOutput("authUser", authUser);
-    core.setOutput("authPassword", authPassword);
-    core.setOutput("subject", subject);
-    core.setOutput("body", body);
-    core.setOutput("from", from);
-    core.setOutput("reciver", reciver);
-    core.setOutput("isTLS", isTLS);
     
+    let smtpServer = core.getInput('smtp-server');
+    let smtpServerPort = core.getInput('smtp-server-port');
+    let authUser = core.getInput('auth-user');
+    let authPassword = core.getInput('auth-password');
+    let subject = core.getInput('subject');
+    let body = core.getInput('body');
+    let from = core.getInput('from');
+    let reciver = core.getInput('to');
+    let isTLS = core.getInput('tls');
+    let isCommitMessage = core.getInput('commit-message');
+
 
     let transporter = nodemailer.createTransport({
         host: smtpServer,
         port: smtpServerPort,
-        secure: isTLS, // upgrade later with STARTTLS
+        secure: isTLS, 
         auth: {
             user: authUser,
             pass: authPassword
         }
     });
 
+    if(isCommitMessage){
+        let payload = github.context.payload;
+
+        var commitMessages=payload.commits
+        .map(a=>  a.message )
+        .reduce((a,b)=>"* "+ a.message + "\n" + "* "+ b.message);
+
+        body = commitMessages;
+        console.log(commitMessages);
+    }
     var message = {
         from,
         to: reciver,
@@ -41,8 +44,11 @@ try {
         text: body,
     };
 
-
-    transporter.sendMail(message)
+    transporter.sendMail(message).then(function(res){
+        core.setOutput("response", message);
+    }).catch(function(error){
+        core.setOutput("error", message);
+    });
 
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);

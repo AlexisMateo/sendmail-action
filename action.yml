@@ -1,13 +1,13 @@
-name: 'send mail'
+name: 'send mail 2'
 description: 'send email from actions'
 inputs:
   smtp-server:  # id of input
     description: 'smtp server'
-    required: true
+    required: false
     default: 'smtp.office365.com'
   smtp-server-port:  # id of input
     description: 'smtp server port'
-    required: true
+    required: false
     default: 25
   auth-user:  # id of input
     description: 'auth user'
@@ -20,7 +20,7 @@ inputs:
     required: false
   body:
     description: 'The message to be sended'
-    required: true
+    required: false
     default: 'Hello'
   from:  # id of input
     description: 'where is the message from'
@@ -30,6 +30,9 @@ inputs:
     required: true
   is-tls:
     description: 'use secure connection?'
+    required: false
+  commit-message:
+    description: 'send commit message as body'
     required: false
 outputs:
   time: # id of output
