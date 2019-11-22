@@ -21,6 +21,6 @@ jobs:
           auth-password: ${{secrets.EMAIL_PASSWORD }}
           subject: elaborado
           body: que buena idea
-          from: a.mateo@caribemedia.com.do
+          from: caribemediainforma@caribemedia.com.do
           to: a.mateo@caribemedia.com.do
           is-tls: true
