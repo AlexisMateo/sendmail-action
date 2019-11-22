@@ -20,7 +20,7 @@ inputs:
     required: false
   body:
     description: 'The message to be sended'
-    required: true
+    required: false
     default: 'Hello'
   from:  # id of input
     description: 'where is the message from'
