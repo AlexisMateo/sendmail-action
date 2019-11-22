@@ -415,11 +415,9 @@ module.exports = pump
 const core = __webpack_require__(310);
 const github = __webpack_require__(462);
 const nodemailer = __webpack_require__(201);
-const smtps = __webpack_require__(929);
 
 try {
 
-    
     let smtpServer = core.getInput('smtp-server');
     let smtpServerPort = core.getInput('smtp-server-port');
     let authUser = core.getInput('auth-user');
@@ -430,18 +428,10 @@ try {
     let reciver = core.getInput('to');
     let isTLS = core.getInput('tls');
 
-    if(!smtpServer){
-        let smtp = authUser.match(/(?<=@)(.*)(?=\.)/g)[0];
-        smtpServer = smtp.serverAddress;
-        smtpServerPort= smtp.SSLPort
-    }
-    
-
-
     let transporter = nodemailer.createTransport({
         host: smtpServer,
         port: smtpServerPort,
-        secure: isTLS, // upgrade later with STARTTLS
+        secure: isTLS, 
         auth: {
             user: authUser,
             pass: authPassword
@@ -23455,13 +23445,6 @@ module.exports = class HttpError extends Error {
   }
 }
 
-
-/***/ }),
-
-/***/ 929:
-/***/ (function(module) {
-
-module.exports = {"gmail":{"serverAddress":"smtp.gmail.com","TLSPort":587,"SSLPort":465},"outlook":{"serverAddress":"smtp-mail.outlook.com","TLSPort":587,"SSLPort":25},"hotmail":{"serverAddress":"smtp.live.com","TLSPort":587,"SSLPort":25},"office":{"serverAddress":"smtp.office365.com","TLSPort":587,"SSLPort":25}};
 
 /***/ }),
 
