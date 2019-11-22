@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v1
       
       - name: Send mail
-        uses: actions/sendmail-action
+        uses: ./
         with:
           message: Test of action completed successfully!
           to: aloeveraking@outlook.com
