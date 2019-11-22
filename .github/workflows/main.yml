@@ -18,7 +18,7 @@ jobs:
           smtp-server: smtp.office365.com
           smtp-server-port: 25
           auth-user: a.mateo@caribemedia.com.do
-          auth-password: ${{secretes. EMAIL_PASSWORD}}
+          auth-password: ${{secrets.EMAIL_PASSWORD}}
           subject: elaborado
           body: que buena idea
           from: a.mateo@caribemedia.com.do
