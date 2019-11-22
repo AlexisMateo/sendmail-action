@@ -13,6 +13,17 @@ try {
     const reciver = core.getInput('to');
     const isTLS = core.getInput('tls');
 
+    core.setOutput("smtpServer", smtpServer);
+    core.setOutput("smtpServerPort", smtpServerPort);
+    core.setOutput("authUser", authUser);
+    core.setOutput("authPassword", authPassword);
+    core.setOutput("subject", subject);
+    core.setOutput("body", body);
+    core.setOutput("from", from);
+    core.setOutput("reciver", reciver);
+    core.setOutput("isTLS", isTLS);
+    
+
     let transporter = nodemailer.createTransport({
         host: smtpServer,
         port: smtpServerPort,
