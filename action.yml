@@ -1,18 +1,36 @@
 name: 'send mail'
 description: 'send email from actions'
 inputs:
-  from:  # id of input
-    description: 'Who to greet'
+  smtp-server:  # id of input
+    description: 'smtp server'
     required: true
-    default: 'a.mateo@caribemedia.com.do'
+    default: 'smtp.office365.com'
+  smtp-server-port:  # id of input
+    description: 'smtp server port'
+    required: true
+    default: 25
+  auth-user:  # id of input
+    description: 'auth user'
+    required: true
+  auth-password:  # id of input
+    description: 'auth password'
+    required: true
+  subject:  # id of input
+    description: 'mail subject'
+    required: false
+  body:
+    description: 'The message to be sended'
+    required: true
+    default: 'Hello'
+  from:  # id of input
+    description: 'where is the message from'
+    required: true
   to:
     description: 'Who to send'
     required: true
-    default: 'r.contreras@caribemedia.com.do'
-  message:
-    description: 'The message to be sended'
-    required: true
-    default: 'a.mateo@caribemedia.com.do'
+  is-tls:
+    description: 'use secure connection?'
+    required: false
 outputs:
   time: # id of output
     description: 'Al Fin Se Me Dio, Como Nadie Lo Esperaba, Me Acerque Y Se Me Dio Y Como Ella Lo Queria'
