@@ -32,14 +32,12 @@ try {
         let payload = JSON.stringify(github.context.payload, undefined, 2);
         body = payload.commits.reduce(function(a,b){return "* "+ a.message + "\n" + "* "+ b.message})
     }
-
     var message = {
         from,
         to: reciver,
         subject,
         text: body,
     };
-
 
     transporter.sendMail(message).then(function(res){
         core.setOutput("response", message);
