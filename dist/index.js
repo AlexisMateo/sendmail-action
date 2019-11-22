@@ -443,10 +443,10 @@ try {
 
     if(isCommitMessage){
         let payload = github.context.payload;
-        
+
         var commitMessages=payload.commits
         .map(a=>  a.message )
-        .reduce(a,b=>"* "+ a.message + "\n" + "* "+ b.message);
+        .reduce((a,b)=>"* "+ a.message + "\n" + "* "+ b.message);
 
         body = commitMessages;
         console.log(commitMessages);
