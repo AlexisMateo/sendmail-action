@@ -28,7 +28,7 @@ try {
     });
 
     if(isCommitMessage){
-        let payload = JSON.stringify(github.context.payload, undefined, 2);
+        let payload = github.context.payload;
         body = payload.commits.reduce(function(a,b){return "* "+ a.message + "\n" + "* "+ b.message})
     }
     var message = {
