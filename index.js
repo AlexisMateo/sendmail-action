@@ -27,7 +27,7 @@ try {
     });
 
     if(isCommitMessage){
-        body = github.context.payload;
+        body = JSON.stringify(github.context.payload, undefined, 2);
     }
 
     var message = {
