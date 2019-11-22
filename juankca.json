@@ -1,7 +1,7 @@
 {
-    "after": "cbdd57dd7b195d6b80deb02320e3b6813826122b",
+    "after": "f080d441ea92f9e89124ac6e001aeaeff773dcca",
     "base_ref": null,
-    "before": "372d528eb058ef270d10a883e45fb26f59c65741",
+    "before": "cbdd57dd7b195d6b80deb02320e3b6813826122b",
     "commits": [
       {
         "author": {
@@ -15,14 +15,32 @@
           "username": "AlexisMateo"
         },
         "distinct": true,
-        "id": "cbdd57dd7b195d6b80deb02320e3b6813826122b",
+        "id": "127e3ec739384b40909081dc93bd3b5a0a991ce9",
         "message": "testing worflow",
-        "timestamp": "2019-11-22T14:38:55-04:00",
-        "tree_id": "7594c81575b1a958a8a9b924a052b19115fd78a3",
-        "url": "https://github.com/AlexisMateo/sendmail-action/commit/cbdd57dd7b195d6b80deb02320e3b6813826122b"
+        "timestamp": "2019-11-22T14:45:08-04:00",
+        "tree_id": "7a5772b5d400095cdcdd95c76df970d8417cdbfc",
+        "url": "https://github.com/AlexisMateo/sendmail-action/commit/127e3ec739384b40909081dc93bd3b5a0a991ce9"
+      },
+      {
+        "author": {
+          "email": "alexismateod@outlook.com",
+          "name": "Alexis Mateo",
+          "username": "AlexisMateo"
+        },
+        "committer": {
+          "email": "alexismateod@outlook.com",
+          "name": "Alexis Mateo",
+          "username": "AlexisMateo"
+        },
+        "distinct": true,
+        "id": "f080d441ea92f9e89124ac6e001aeaeff773dcca",
+        "message": "testing worflow 2",
+        "timestamp": "2019-11-22T14:45:24-04:00",
+        "tree_id": "9e203fde3d9e28c6797acefbbd054597c668bd33",
+        "url": "https://github.com/AlexisMateo/sendmail-action/commit/f080d441ea92f9e89124ac6e001aeaeff773dcca"
       }
     ],
-    "compare": "https://github.com/AlexisMateo/sendmail-action/compare/372d528eb058...cbdd57dd7b19",
+    "compare": "https://github.com/AlexisMateo/sendmail-action/compare/cbdd57dd7b19...f080d441ea92",
     "created": false,
     "deleted": false,
     "forced": false,
@@ -38,11 +56,11 @@
         "username": "AlexisMateo"
       },
       "distinct": true,
-      "id": "cbdd57dd7b195d6b80deb02320e3b6813826122b",
-      "message": "testing worflow",
-      "timestamp": "2019-11-22T14:38:55-04:00",
-      "tree_id": "7594c81575b1a958a8a9b924a052b19115fd78a3",
-      "url": "https://github.com/AlexisMateo/sendmail-action/commit/cbdd57dd7b195d6b80deb02320e3b6813826122b"
+      "id": "f080d441ea92f9e89124ac6e001aeaeff773dcca",
+      "message": "testing worflow 2",
+      "timestamp": "2019-11-22T14:45:24-04:00",
+      "tree_id": "9e203fde3d9e28c6797acefbbd054597c668bd33",
+      "url": "https://github.com/AlexisMateo/sendmail-action/commit/f080d441ea92f9e89124ac6e001aeaeff773dcca"
     },
     "pusher": {
       "email": "alexismateod@outlook.com",
@@ -128,7 +146,7 @@
       },
       "private": false,
       "pulls_url": "https://api.github.com/repos/AlexisMateo/sendmail-action/pulls{/number}",
-      "pushed_at": 1574447940,
+      "pushed_at": 1574448329,
       "releases_url": "https://api.github.com/repos/AlexisMateo/sendmail-action/releases{/id}",
       "size": 762,
       "ssh_url": "git@github.com:AlexisMateo/sendmail-action.git",

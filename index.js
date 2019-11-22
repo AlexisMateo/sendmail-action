@@ -29,7 +29,8 @@ try {
     });
 
     if(isCommitMessage){
-        body = JSON.stringify(github.context.payload, undefined, 2);
+        let payload = JSON.stringify(github.context.payload, undefined, 2);
+        body = payload.commits.reduce(function(a,b){return "* "+ a.message + "\n" + "* "+ b.message})
     }
 
     var message = {
