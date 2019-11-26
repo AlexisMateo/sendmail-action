@@ -29,7 +29,7 @@ try {
 
     if(isCommitMessage){
         let payload = github.context.payload;
-        console.log(payload);
+        console.log(payload.pull_request.commits);
 
         var commitMessages=payload.commits
         .map(a=>  a.message )
