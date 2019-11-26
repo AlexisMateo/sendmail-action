@@ -1,9 +1,8 @@
 name: send mail action
 
 on:
-  push:
-    branches:
-      - develop
+  pull_request:
+    types: [closed]
 
 jobs:
   main:
