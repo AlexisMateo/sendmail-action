@@ -444,9 +444,7 @@ try {
     if(isCommitMessage){
         let payload = github.context.payload;
         let commit = payload.pull_request.title;
-
         body = commit;
-        console.log(commitMessages);
     }
     var message = {
         from,
