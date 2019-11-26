@@ -443,14 +443,9 @@ try {
 
     if(isCommitMessage){
         let payload = github.context.payload;
-        let commits = payload.pull_request._links.commits;
-        console.log(commits);
+        let commit = payload.pull_request.title;
 
-        var commitMessages=commits
-        .map(a=>  a.message )
-        .reduce((a,b)=>"* "+ a.message + "\n" + "* "+ b.message);
-
-        body = commitMessages;
+        body = commit;
         console.log(commitMessages);
     }
     var message = {
