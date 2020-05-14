@@ -7,7 +7,7 @@ An action  sends a email.
 
 ```yml
 - name: Send email
-    uses: AlexisMateo/sendmdail-action@1
+    uses: AlexisMateo/sendmail-action@5
     with:
       smtp-server: ${{ secrets.SMTP_SERVER }}
       smtp-server-port: ${{ secrets.SMTP_SERVER_PORT }}
